@@ -1156,7 +1156,7 @@ mod tests {
             .unwrap();
 
             assert_eq!(rsp.messages, vec![]);
-            assert_eq!(rsp.events, vec![]);
+            assert_eq!(rsp.events.len(), 0);
             assert_eq!(rsp.data, None);
 
             assert_eq!(
