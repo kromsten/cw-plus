@@ -1,6 +1,6 @@
 [package]
 name = "cw22"
-version = "0.3.0"
+version = "0.5.0"
 authors = [
     "ThienLK1@aura-nw",
     "Kromsten <kromsten@megarock.app>"
@@ -11,9 +11,15 @@ license = "Apache-2.0"
 repository = "https://github.com/CosmWasm/cw-plus"
 homepage = "https://cosmwasm.com"
 
+
+[features]
+default      = ["cosmwasm_2_1"]
+cosmwasm_2_0 = ["cosmwasm-std/cosmwasm_2_0"]
+cosmwasm_2_1 = ["cosmwasm-std/cosmwasm_2_1"]
+
 [dependencies]
 cosmwasm-schema = "2.1.4"
-cosmwasm-std = { version = "2.1.4", default-features = false }
+cosmwasm-std = { version = "2.1.4", default-features = false, features = ["std"]}
 cw-storage-plus = "2.0.0"
 schemars = "0.8.21"
 serde = { version = "1.0.215", default-features = false, features = ["derive"] }
